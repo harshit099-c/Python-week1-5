@@ -1,55 +1,55 @@
-# f=open("phase-1/sample.txt","w") #opening file in read mode
-# # data=f.read() #reading file content using read()
-# # print(type(data))
-# # data_lines=f.readline()
-# # print(data_lines)
+f=open("phase-1/sample.txt","w") #opening file in read mode
+# data=f.read() #reading file content using read()
+# print(type(data))
+# data_lines=f.readline()
+# print(data_lines)
 
-# f.write("New line added")
+f.write("New line added")
+f.close()
+
+#file operation modes
+
+# r-read , w-write , a-append , r+- read and write , w+- write and read , a+- append and read
+f=open("phase-1/sample.txt","a")
+f.write("\n New line appended")
+f.close()
+
+# f=open("phase-1/sample3.txt","x") #create new file
+# f.write("new file created for writing")
 # f.close()
 
-# #file operation modes
+#r+mode
+f=open("phase-1/sample2.txt","r+")
+f.write(" adding new line in read and write mode \n")
+f.seek(0) #move cursor to starting position
+data=f.read()
+print(data)
+f.close()
 
-# # r-read , w-write , a-append , r+- read and write , w+- write and read , a+- append and read
-# f=open("phase-1/sample.txt","a")
-# f.write("\n New line appended")
-# f.close()
+#a+ mode
+f=open("phase-1/sample2.txt","a+")
 
-# # f=open("phase-1/sample3.txt","x") #create new file
-# # f.write("new file created for writing")
-# # f.close()
+f.write(" \n New line added using a+ mode ")
+f.seek(0)
+print(f.read())
+f.close()
 
-# #r+mode
-# f=open("phase-1/sample2.txt","r+")
-# f.write(" adding new line in read and write mode \n")
-# f.seek(0) #move cursor to starting position
-# data=f.read()
-# print(data)
-# f.close()
+#w+mode
+f=open("phase-1/sample2.txt","w+")
+f.write("New line added using w+ mode")
+f.seek(0)
+print(f.read())
+f.close()
 
-# #a+ mode
-# f=open("phase-1/sample2.txt","a+")
+#with keyword
+with open("phase-1/sample3.txt","r") as f:
+   print(f.read())
+with open("phase-1/sample3.txt","w") as f:
+   f.write("overwriting file content using with")  
 
-# f.write(" \n New line added using a+ mode ")
-# f.seek(0)
-# print(f.read())
-# f.close()
-
-# #w+mode
-# f=open("phase-1/sample2.txt","w+")
-# f.write("New line added using w+ mode")
-# f.seek(0)
-# print(f.read())
-# f.close()
-
-# #with keyword
-# with open("phase-1/sample3.txt","r") as f:
-#    print(f.read())
-# with open("phase-1/sample3.txt","w") as f:
-#    f.write("overwriting file content using with")  
-
-# #delete files
-# import os   
-# os.remove("phase-1/sample.txt")
+#delete files
+import os   
+os.remove("phase-1/sample.txt")
 
 # #practce question
 # #1)word search 
@@ -133,7 +133,7 @@ with open("phase-1/sample.json","w") as f:
 #Q-1
 with open("phase-1/names.txt","w") as f:
    f.write("Harshit\nAnkit\nDeepak\nSumit\nRohit")
-   f.close()
+   
 
 with open("phase-1/names.txt","r") as f:
    data=f.read()
@@ -142,10 +142,10 @@ with open("phase-1/names.txt","r") as f:
 #Q-2
 with open("phase-1/logs.txt","w") as f:
    f.write("Error:File not found\nWarning:Low disk space\nInfo:Update completed\nError:Access denied")
-   f.close()
+
 with open("phase-1/logs.txt","a") as f:
    f.write("\n Program run successfully")
-   f.close()
+
 with open("phase-1/logs.txt","r") as f:
    data=f.read()
    print(data)   
