@@ -1,0 +1,20 @@
+import json
+
+# 1️⃣ Read existing JSON
+with open("phase-1/sample.json", "r") as f:
+    data = json.loads(f.read())
+
+# 2️⃣ Add long information
+data["college"] = "XYZ Institute of Technology"
+data["year"] = 3
+data["skills"] = ["SQL", "Data Analysis", "ML"]
+data["projects"] = {
+    "project1": "Student Management System",
+    "project2": "Weather App"
+}
+
+# 3️⃣ Write back to JSON (overwrite)
+with open("phase-1/sample.json", "w") as f:
+    json.dump(data, f, indent=4)
+
+print("Long info added successfully")

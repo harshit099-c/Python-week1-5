@@ -1,0 +1,14 @@
+{
+    "New_data": "Added using append mode",
+    "address": {
+        "city": "Panipat",
+        "country": "india"
+    },
+    "name": "Harshit",
+    "student": true,
+    "subjects": [
+        "Python",
+        "Java",
+        "JS"
+    ]
+}

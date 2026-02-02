@@ -1,0 +1,5 @@
+Error:File not found
+Warning:Low disk space
+Info:Update completed
+Error:Access denied
+ Program run successfully

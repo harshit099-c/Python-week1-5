@@ -1,5 +1,2 @@
-print(a==b)
-print(a!=b)
-print(a>b)
-print(a<b)
- 
+
+#r+mode
