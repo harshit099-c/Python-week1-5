@@ -204,3 +204,128 @@ d1=doctor()
 
 print_designation(t1)
 print_designation(d1)
+
+#assignment questions
+#Q-1
+class book():
+  def __init__(self,title,author,list_of_reviews):
+    self.title=title
+    self.author=author
+    self.list_of_reviews=list_of_reviews
+
+  def add_review(self,review):
+    self.list_of_reviews.append(review)
+
+  def count_reviews(self):
+    return len(self.list_of_reviews)
+
+  def display_review (self):
+    for i in self.list_of_reviews:
+      print(i) 
+
+
+b1=book("Python","Harshit",["Nice book"]) 
+b1.add_review("Good")
+print(b1.count_reviews())
+b1.display_review()       
+
+#Q-2
+class Student:
+
+    def set_attri(self, name, roll_no, marks):
+
+        if name is None or name == "":
+            print("Name can't be null")
+        else:
+            self.__name = name
+
+        if marks < 0 or marks > 100:
+            print("Invalid marks")
+        else:
+            self.__marks = marks
+
+        if roll_no in range(1, 101):
+            self.__roll_no = roll_no
+        else:
+            print("Invalid roll no")
+
+    def get_attri(self):
+        print(f"Name: {self.__name}, Roll No: {self.__roll_no}, Marks: {self.__marks}")
+
+
+s1 = Student()
+s1.set_attri("Harshit", 20, 89)
+s1.get_attri()
+
+#Q-3
+class person():
+  
+   def __init__(self,name,age=None,address=None):
+      self.__name=name
+      self.__age=age
+      self.__address=address
+
+   def display(self):
+      print("Name: ",self.__name)
+
+      if self.__age is not None:
+         print("Age: ",self.__age)
+
+      if self.__address is not None :
+         print("Address: ",self.__address)
+
+p1=person("Harshit",21)
+p1.display()
+
+#Q-4
+class player():
+   player_count=0
+
+   def __init__(self,name,level):
+      self.name=name
+      self.level=level
+      player.player_count+=1
+
+   def display(self):
+      print(f"Player Name:{self.name} and level:{self.level}")
+   def display_count(self):
+      print("Total players :",player.player_count)
+
+p1=player("Harshit",5)
+p1.display()      
+p2=player("Rohit",3)
+p2.display()
+p1.display_count()       
+
+#Q-9
+class Herbivore():
+   about1="They eat plants"
+
+   def eat1(self):
+      print("They eat plants")
+
+class Carnivore():
+   about2="They eat flesh and meat"
+
+   def eat2(self):
+      print("They eat other animals")
+
+class Omnivore():
+   about3="They eat both plants and animals"
+
+   def eat3(self):
+      print("They eat both plants and animals")
+
+class bear(Herbivore,Carnivore,Omnivore):
+
+     def display(self):
+        print(self.about1,self.about2,self.about3)
+
+b1=bear()
+b1.display()    
+b1.eat1()
+b1.eat2()
+b1.eat3()                   
+
+
+#Mini project 
